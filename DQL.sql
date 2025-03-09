@@ -37,19 +37,6 @@ select a.nome_autor from tb_autores a join tb_livros l on a.pk_autor = l.fk_auto
 select l.titulo_livro, count(e.pk_emprestimo) as qntd_emprestimos from tb_livros l join tb_emprestimos e on l.pk_livro = e.fk_livro where e.data_emprestimo between '2023-07-05' and '2023-08-12'
 group by l.titulo_livro ORDER by qntd_emprestimos desc LIMIT 1
 
--- Desafio 13: Selecionar os autores que possuem pelo menos um livro emprestado a cada usuário.
--- Preciso dos altores presente em emprestimos pelos fk de livro, agrupar por autores com um count > 1
-
-select * from tb_autores a 
-	join tb_livros l on a.pk_autor = l.fk_autor
-	join tb_emprestimos e on l.pk_livro = e.fk_livro
-	join tb_usuarios u on e.fk_usuario = u.pk_usuario
-	
-	--GROUP by a.nome_autor
-	
-
-
-
 
 select*from tb_autores;
 select*from tb_usuarios;
